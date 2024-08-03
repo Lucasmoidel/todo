@@ -1,4 +1,4 @@
-#include <kiss_sdl/kiss_sdl.h>
+#include "kiss_sdl/kiss_sdl.h"
 
 
 void button_event(kiss_button *button, SDL_Event *e, int *draw,int *quit){
