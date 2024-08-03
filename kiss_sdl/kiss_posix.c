@@ -22,7 +22,7 @@
   kiss_sdl version 1.2.0
 */
 
-#include "kiss_sdl/kiss_sdl.h"
+#include "kiss_sdl.h"
 
 char *kiss_getcwd(char *buf, int size)
 {

@@ -22,7 +22,7 @@
   kiss_sdl version 1.2.4
 */
 
-#include "kiss_sdl/kiss_sdl.h"
+#include "kiss_sdl.h"
 
 kiss_font kiss_textfont, kiss_buttonfont;
 kiss_image kiss_normal, kiss_prelight, kiss_active, kiss_bar,
