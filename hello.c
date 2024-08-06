@@ -21,7 +21,6 @@ int main(int argc, char **argv){SDL_Renderer *renderer;
     strcpy(message, "Hello World!");
     kiss_label_new(&label, &window, message, window.rect.w / 2 - strlen(message) *kiss_textfont.advance / 2, window.rect.h / 2 - (kiss_textfont.fontheight +2 * kiss_normal.h) / 2);
     label.textcolor.r = 255;
-    label.textcolor.a = 50;
     kiss_button_new(&button, &window, "OK",window.rect.w / 2 - kiss_normal.w / 2, label.rect.y +  kiss_textfont.fontheight + kiss_normal.h);
     window.visible = 1;
     while (!quit) {
