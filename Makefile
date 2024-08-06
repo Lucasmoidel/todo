@@ -11,7 +11,7 @@ BIN1 = hello
 
 all: $(BIN1) $(BIN2)
 
-$(BIN1): hello.o kiss_sdl/kiss_widgets.o  kiss_sdl/kiss_draw.o  kiss_sdl/kiss_general.o \ kiss_sdl/kiss_posix.o
+$(BIN1): hello.o kiss_sdl/kiss_widgets.o  kiss_sdl/kiss_draw.o  kiss_sdl/kiss_general.o  kiss_sdl/kiss_posix.o
 	$(C) $^ $(LDFLAGS) -o $@ && rm *.o
 
 hello.o: hello.c
@@ -26,8 +26,8 @@ hello.o: hello.c
  kiss_sdl/kiss_general.o:  kiss_sdl/kiss_general.c
 	$(C) $(CFLAGS) $^ -o $@
 
- kiss_sdl/kiss_posix.o: kiss_posix.c
+ kiss_sdl/kiss_posix.o: kiss_sdl/kiss_posix.c
 	$(C) $(CFLAGS) $^ -o $@
 
 clean:
-	rm $(BIN1)
+	rm $(BIN1) && rm kiss_sdl/*.o

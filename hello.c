@@ -1,7 +1,7 @@
 #include "kiss_sdl/kiss_sdl.h"
 
 
-void button_event(kiss_button *button, SDL_Event *e, int *draw,int *quit){
+void button_event(kiss_button* button, SDL_Event* e, int* draw,int* quit){
     if (kiss_button_event(button, e, draw)) *quit = 1;
 }
 int main(int argc, char **argv){SDL_Renderer *renderer;
@@ -19,8 +19,9 @@ int main(int argc, char **argv){SDL_Renderer *renderer;
     if (!renderer) return 1;
     kiss_window_new(&window, NULL, 0, 0, 0, kiss_screen_width,kiss_screen_height);
     strcpy(message, "Hello World!");
-    kiss_label_new(&label, &window, message,window.rect.w / 2 - strlen(message) *kiss_textfont.advance / 2,window.rect.h / 2 - (kiss_textfont.fontheight +2 * kiss_normal.h) / 2);
+    kiss_label_new(&label, &window, message, window.rect.w / 2 - strlen(message) *kiss_textfont.advance / 2, window.rect.h / 2 - (kiss_textfont.fontheight +2 * kiss_normal.h) / 2);
     label.textcolor.r = 255;
+    label.textcolor.a = 50;
     kiss_button_new(&button, &window, "OK",window.rect.w / 2 - kiss_normal.w / 2, label.rect.y +  kiss_textfont.fontheight + kiss_normal.h);
     window.visible = 1;
     while (!quit) {
