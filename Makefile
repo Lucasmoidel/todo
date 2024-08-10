@@ -6,10 +6,10 @@ C = gcc
 ### Linux
 
 LDFLAGS = -lSDL2 -lSDL2_image -lSDL2_ttf
-CFLAGS = -Wall -c -std=c89
+CFLAGS = -Wall -c -g
 BIN1 = hello
 
-all: $(BIN1)
+all: clean $(BIN1)
 
 $(BIN1): hello.o kiss_sdl/kiss_widgets.o  kiss_sdl/kiss_draw.o  kiss_sdl/kiss_general.o  kiss_sdl/kiss_posix.o
 	$(C) $^ $(LDFLAGS) -o $@ && rm *.o
