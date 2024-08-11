@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "kiss_sdl/kiss_sdl.h"
 
 void button_event(kiss_button* new_entry, SDL_Event* e, int* draw, kiss_entry* entry);
@@ -49,16 +50,19 @@ void button_event(kiss_button* new_entry, SDL_Event* e, int* draw, kiss_entry *e
         fptr = fopen("todo.txt", "a");
         char thing[102];
         int x;
+        bool end = false;
         for (x = 0; x < 100; x++) {
-            if (entry->text[x] == 0 || entry->text[x] == 40) {
-                thing[x] = *" ";
+            if (entry->text[x] == 0) end = true ; 
+
+            if (end == true) {
+                thing[x] = ' ';    
             } else {
                 thing[x] = entry->text[x];
             }
             
         }
-        thing[100] = *"y";
-        thing[101] = *"\0";
+        thing[100] = 'y';
+        thing[101] = '\0';
         fprintf(fptr, "%s\n", thing);
         fclose(fptr);
         strcpy(entry->text, "");
