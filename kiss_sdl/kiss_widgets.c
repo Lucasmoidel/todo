@@ -631,11 +631,6 @@ int kiss_entry_event(kiss_entry *entry, SDL_Event *event, int *draw)
 		event->key.keysym.scancode == SDL_SCANCODE_U) {
 		strcpy(entry->text, "");
 		*draw = 1;
-	} else if (event->type == SDL_MOUSEBUTTONDOWN && entry->active &&
-		kiss_pointinrect(event->button.x, event->button.y,
-		&entry->rect)) {
-		strcpy(entry->text, "");
-		*draw = 1;
 	}
 	return 0;
 }

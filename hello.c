@@ -4,7 +4,8 @@
 void button_event(kiss_button* button, SDL_Event* e, int* draw,int* quit){
     if (kiss_button_event(button, e, draw)) *quit = 1;
 }
-int main(int argc, char **argv){SDL_Renderer *renderer;
+int main(int argc, char **argv){
+    SDL_Renderer *renderer;
     SDL_Event e;
     kiss_array objects;
     kiss_window window;
